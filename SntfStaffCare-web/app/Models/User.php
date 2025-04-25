@@ -17,9 +17,9 @@ class User extends Authenticatable
         return $this->hasOne(Medecin::class);
     }
     
-    public function employee()
+    public function employe()
     {
-        return $this->hasOne(Employee::class);
+        return $this->hasOne(Employe::class);
     }
     
     public function admin()
@@ -41,7 +41,6 @@ class User extends Authenticatable
         'adresse',
         'wilaya',
         'sexe',
-        'nationalité',
         'statut',
         'role',
     ];

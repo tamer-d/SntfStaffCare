@@ -65,4 +65,9 @@ enum Wilaya: string
     case Djanet = 'Djanet';
     case ElMghair = 'El Mghair';
     case ElMenia = 'El Menia';
+
+    public static function asArray(): array
+    {
+        return array_column(self::cases(), 'value', 'name');
+    }
 }

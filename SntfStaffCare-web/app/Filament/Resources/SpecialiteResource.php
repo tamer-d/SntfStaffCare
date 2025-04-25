@@ -17,7 +17,13 @@ class SpecialiteResource extends Resource
 {
     protected static ?string $model = Specialite::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-list-bullet';
+    protected static ?string $navigationLabel = 'Spécialités';
+    protected static ?string $navigationGroup = 'gestion du système';
+    protected static ?string $modelLabel = 'gestion de specialités des medecins';
+    protected static ?int $navigationSort = 5;
+
+    
 
     public static function form(Form $form): Form
     {

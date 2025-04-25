@@ -18,16 +18,15 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('nomConjoint')->nullable();
             $table->string('email')->unique();
-            $table->string('numTelephone')->nullable();
+            $table->string('numTelephone')->unique();
             $table->string('password');
             $table->date('dateNaissance')->nullable();
             $table->string('lieuNaissance')->nullable();
             $table->string('wilayaNaissance')->nullable();
             $table->string('adresse')->nullable();
             $table->string('wilaya')->nullable();
-            $table->enum('sexe', ['Homme', 'Femme']);
-            $table->string('nationalité')->nullable();
-            $table->string('statut')->nullable();
+            $table->enum('sex', ['Homme', 'Femme']);
+            $table->string('statut', ['Actif', 'Inactif'])->default('actif');
             $table->enum('role', ['super_admin', 'admin', 'doctor', 'employee']);
             
             $table->rememberToken();

@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\DepartementResource\Pages;
-use App\Filament\Resources\DepartementResource\RelationManagers;
-use App\Models\Departement;
+use App\Filament\Resources\SecteurResource\Pages;
+use App\Filament\Resources\SecteurResource\RelationManagers;
+use App\Models\Secteur;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,16 +13,15 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class DepartementResource extends Resource
+class SecteurResource extends Resource
 {
-    protected static ?string $model = Departement::class;
+    protected static ?string $model = Secteur::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
-    protected static ?string $navigationLabel = 'Départements';
-    protected static ?string $modelLabel = 'gestion de departements';
+    protected static ?string $navigationIcon = 'heroicon-o-map-pin';
+    protected static ?string $navigationLabel = 'Secteurs';
+    protected static ?string $modelLabel = "gestion de secteurs d'activités";
     protected static ?string $navigationGroup = 'gestion du système';
-    protected static ?int $navigationSort = 2;
-
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -72,9 +71,9 @@ class DepartementResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListDepartements::route('/'),
-            'create' => Pages\CreateDepartement::route('/create'),
-            'edit' => Pages\EditDepartement::route('/{record}/edit'),
+            'index' => Pages\ListSecteurs::route('/'),
+            'create' => Pages\CreateSecteur::route('/create'),
+            'edit' => Pages\EditSecteur::route('/{record}/edit'),
         ];
     }
 }

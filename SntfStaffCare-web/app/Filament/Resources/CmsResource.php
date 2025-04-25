@@ -17,7 +17,12 @@ class CmsResource extends Resource
 {
     protected static ?string $model = Cms::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home-modern';
+    protected static ?string $navigationLabel = 'CMS';
+    protected static ?string $modelLabel = 'gestion de centres médico-sociaux';
+    protected static ?string $navigationGroup = 'gestion du système';
+    protected static ?int $navigationSort = 3;
+
 
     public static function form(Form $form): Form
     {
@@ -26,11 +31,7 @@ class CmsResource extends Resource
                 Forms\Components\TextInput::make('nom')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('adresse')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('wilaya')
-                    ->required()
-                    ->maxLength(255),
+                
             ]);
     }
 
@@ -40,18 +41,6 @@ class CmsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nom')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('adresse')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('wilaya')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

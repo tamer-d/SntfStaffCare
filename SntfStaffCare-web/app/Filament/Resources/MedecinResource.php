@@ -17,7 +17,12 @@ class MedecinResource extends Resource
 {
     protected static ?string $model = Medecin::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $navigationLabel = 'Medecins';
+    protected static ?string $modelLabel = 'gestion des medecins';
+    protected static ?string $navigationGroup = 'Gestion des utilisateurs';
+    protected static ?int $navigationSort = 2;
+
 
     public static function form(Form $form): Form
     {
