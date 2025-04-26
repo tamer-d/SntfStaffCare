@@ -20,7 +20,6 @@ class EmployeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
     protected static ?string $navigationLabel = 'Employees';
-    protected static ?string $modelLabel = 'gestion des employees';
     protected static ?string $navigationGroup = 'Gestion des utilisateurs';
     protected static ?int $navigationSort = 3;
 

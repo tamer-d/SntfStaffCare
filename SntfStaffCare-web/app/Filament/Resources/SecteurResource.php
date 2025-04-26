@@ -19,7 +19,6 @@ class SecteurResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-map-pin';
     protected static ?string $navigationLabel = 'Secteurs';
-    protected static ?string $modelLabel = "gestion de secteurs d'activités";
     protected static ?string $navigationGroup = 'gestion du système';
     protected static ?int $navigationSort = 1;
 

@@ -18,8 +18,8 @@ class CmsResource extends Resource
     protected static ?string $model = Cms::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-home-modern';
-    protected static ?string $navigationLabel = 'CMS';
-    protected static ?string $modelLabel = 'gestion de centres médico-sociaux';
+    protected static ?string $navigationLabel = 'Centres médico-sociaux';
+    protected static ?string $modelLabel = 'CMS';
     protected static ?string $navigationGroup = 'gestion du système';
     protected static ?int $navigationSort = 3;
 

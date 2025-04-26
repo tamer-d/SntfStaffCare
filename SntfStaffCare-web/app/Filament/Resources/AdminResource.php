@@ -63,7 +63,7 @@ class AdminResource extends Resource
             Forms\Components\DatePicker::make('user.dateNaissance')
                 ->label('Date de Naissance')
                 ->nullable(),
-                Forms\Components\TextInput::make('user.lieuNaissance')
+            Forms\Components\TextInput::make('user.lieuNaissance')
                     ->label('Lieu de Naissance')
                     ->nullable(),
             Forms\Components\Select::make('user.wilayaNaissance')
@@ -71,7 +71,7 @@ class AdminResource extends Resource
                 ->options(Wilaya::asArray())
                 ->searchable()
                 ->nullable(),
-                Forms\Components\Select::make('user.statut')
+            Forms\Components\Select::make('user.statut')
                 ->label('Statut')
                 ->options([
                     'Actif' => 'Actif',
@@ -94,6 +94,7 @@ class AdminResource extends Resource
                 Tables\Columns\TextColumn::make('user.email')->label('Email'),
                 Tables\Columns\TextColumn::make('user.statut')->label('Statut'),
                 Tables\Columns\TextColumn::make('created_at')->label('Créé le')->date(),
+                
             ]);
     }
 

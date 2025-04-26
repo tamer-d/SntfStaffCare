@@ -14,6 +14,7 @@ class CreateAdmin extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
+        // Créer l'utilisateur
         $user = User::create([
             'nom' => $data['user']['nom'],
             'prenom' => $data['user']['prenom'],
@@ -28,28 +29,17 @@ class CreateAdmin extends CreateRecord
             'wilayaNaissance' => $data['user']['wilayaNaissance'],
             'statut' => $data['user']['statut'],
             'password' => bcrypt($data['user']['password']),
-            'role' => 'admin', // Définir le rôle comme admin
+            'role' => 'admin',
         ]);
-
-         $data['user_id'] = $user->id;
+        
+        $data['user_id'] = $user->id;
+        
+        Admin::create([
+            'user_id' =>  $data['user_id'],
+            'secteur_id' => $data['secteur_id'], 
+        ]);
 
         return $data;
     }
 
-    protected function afterCreate(): void
-    {
-        // Récupérer l'état du formulaire
-        $state = $this->form->getState();
-
-        // Assurez-vous que user_id est disponible
-        if (isset($state['user_id'])) {
-            Admin::create([
-                'user_id' => $state['user_id'], // Utilisez l'état du formulaire ici
-                'secteur_id' => $state['secteur_id'],
-            ]);
-        } else {
-            // Gérer l'erreur si user_id est indéfini
-            throw new \Exception("user_id is not defined.");
-        }
-    }
 }

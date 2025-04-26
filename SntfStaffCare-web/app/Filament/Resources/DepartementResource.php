@@ -19,7 +19,6 @@ class DepartementResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
     protected static ?string $navigationLabel = 'Départements';
-    protected static ?string $modelLabel = 'gestion de departements';
     protected static ?string $navigationGroup = 'gestion du système';
     protected static ?int $navigationSort = 2;
 

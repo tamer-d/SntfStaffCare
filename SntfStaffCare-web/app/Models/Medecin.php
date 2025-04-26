@@ -24,9 +24,4 @@ class Medecin extends Model
     {
         return $this->belongsTo(Specialite::class);
     }
-
-    public function service()
-    {
-        return $this->belongsTo(Service::class);
-    }
 }

@@ -19,7 +19,6 @@ class MedecinResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $navigationLabel = 'Medecins';
-    protected static ?string $modelLabel = 'gestion des medecins';
     protected static ?string $navigationGroup = 'Gestion des utilisateurs';
     protected static ?int $navigationSort = 2;
 
@@ -32,9 +31,6 @@ class MedecinResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('specialite_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('service_id')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('cms_id')
@@ -51,9 +47,6 @@ class MedecinResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('specialite_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('service_id')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('cms_id')

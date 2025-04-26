@@ -60,4 +60,9 @@ class User extends Authenticatable
         return $this->password;
     }
 
+    public function admins()
+    {
+        return $this->hasMany(Admin::class);
+    }
+
 }
